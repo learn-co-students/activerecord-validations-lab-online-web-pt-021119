@@ -1,7 +1,7 @@
 class MyValidator < ActiveModel::Validator
-  def validate(title)
-    unless title.starts_with? 'X'
-      record.errors[:name] << 'Need a category starting with X please!'
+  def validate(record)
+    unless record.title.starts_with? 'X'
+      record.errors[:title] << 'Need a category starting with X please!'
     end
   end
 end
